@@ -1,0 +1,144 @@
+/* Chat container smooth animation (dark theme) */
+#chat-container {
+    width: 350px;
+    height: 500px;
+    background-color: #2b2b2b; /* Dark background color */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Slightly darker shadow */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slideIn 0.5s ease forwards;
+}
+.bot-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+/* Chat closing animation */
+.chat-bot-main-section.close-animation {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+/* Chat Header */
+.chat-header {
+    background-color: #1e1e1e; /* Darker header background */
+    color: #ffffff; /* White text color for contrast */
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h4 {
+    margin: 0;
+    font-size: 18px;
+    color: #e0e0e0; /* Lighter grey for header text */
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #ffffff; /* White close button */
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Chat Body */
+.chat-body {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #2b2b2b; /* Dark background for body */
+    color: #e0e0e0; /* Light grey text color */
+}
+
+.chat-message {
+    max-width: 75%;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.4;
+    display: inline-block;
+    color: #ffffff; /* White text for messages */
+}
+
+.user-message {
+    background-color: #4a4a4a; /* Dark grey for user message */
+    align-self: flex-end;
+    border-radius: 12px 12px 0 12px;
+    animation: slideIn 0.3s ease forwards;
+
+}
+
+.bot-message {
+    background-color: #3a3a3a; /* Darker grey for bot message */
+    align-self: flex-start;
+    border-radius: 12px 12px 12px 0;
+    animation: slideIn 0.3s ease forwards;
+
+}
+
+/* Chat Input Section */
+.chat-input-section {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #444; /* Darker border for input section */
+    background-color: #1e1e1e; /* Dark background for input section */
+}
+
+.chat-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #555; /* Darker border for input */
+    background-color: #2b2b2b; /* Dark background for input */
+    color: #e0e0e0; /* Light grey text for input */
+    font-size: 14px;
+    outline: none;
+}
+
+.chat-input::placeholder {
+    color: #888; /* Lighter placeholder color */
+}
+
+.send-btn {
+    background-color: #007BFF; /* Keep button color consistent */
+    color: white;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dark mode scrollbar */
+.chat-body::-webkit-scrollbar {
+    width: 10px;
+}
+
+.chat-body::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background-color: #444; 
+    border-radius: 10px;
+}
