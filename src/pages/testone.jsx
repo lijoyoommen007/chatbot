@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from 'react-dom/client'; // React 18's method
 import './ChatBot.css'; // Ensure your CSS file is correctly referenced
-import ChatBotCard from './ChatBotCard'; // Import the ChatBotCard component
+import ChatBotCard from './chatbotcard'; // Import the ChatBotCard component
 import ChatBotMainSection from './ChatBotMainCard'; // Import the ChatBotMainSection component
 import chatIcon from './Animation - 1727288257547.gif'; // Ensure this path is correct
 
