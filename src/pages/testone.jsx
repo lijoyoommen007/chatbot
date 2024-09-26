@@ -3,8 +3,7 @@ import { createRoot } from 'react-dom/client'; // React 18's method
 import './ChatBot.css'; // Ensure your CSS file is correctly referenced
 import ChatBotCard from './chatbotcard'; // Import the ChatBotCard component
 import ChatBotMainSection from './ChatBotMainCard'; // Import the ChatBotMainSection component
-// import chatIcon from './Animation - 1727288257547.gif'; // Ensure this path is correct
-import image from "./AgentConnect_BlogHeader-1024x576-131.jpg"; // Dummy image
+import chatIcon from './Animation - 1727288257547.gif'; // Ensure this path is correct
 
 const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false); // Tracks chat bot opening after 1 second
@@ -28,7 +27,7 @@ const ChatBot = () => {
             {/* Chat Icon */}
             <div className="chat-icon">
                 <img 
-                    src={image} 
+                    src={chatIcon} 
                     alt="Chat Icon" 
                     className="chat-icon-gif" 
                     onClick={toggleClick} 
