@@ -5,7 +5,7 @@ import ChatBotCard from './chatbotcard'; // Import the ChatBotCard component
 import chatIcon from './Animation - 1727288257547.gif'; // Import your GIF here
 import ChatBotMainSection from "./ChatBotMainCard";
 
-const ChatBot = () => {
+ const ChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [toggleCardOpen, setToggleCardOpen] = useState(false);
 
@@ -40,14 +40,21 @@ const ChatBot = () => {
     );
 };
 
-export default ChatBot;
+export default ChatBot
 
-// Add this function to the window object to expose it globally
-window.loadChatBotWidget = (elementId) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-        ReactDOM.render(<ChatBot />, element);
-    } else {
-        console.error(`Element with ID "${elementId}" not found`);
-    }
-};
+// Automatically load ChatBot into the DOM
+(function() {
+    // Ensure the DOM is ready before trying to manipulate it
+    window.addEventListener('DOMContentLoaded', function() {
+        // Check if the chat-bot-container exists, if not, create it
+        let chatBotContainer = document.getElementById('chat-bot-container');
+        if (!chatBotContainer) {
+            chatBotContainer = document.createElement('div');
+            chatBotContainer.id = 'chat-bot-container';
+            document.body.appendChild(chatBotContainer); // Append it to the body
+        }
+
+        // Now render the ChatBot component into the container
+        ReactDOM.render(<ChatBot />, chatBotContainer);
+    });
+})(); 
